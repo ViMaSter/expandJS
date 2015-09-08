@@ -109,3 +109,25 @@ if (!window.requestAnimationFrame)
 		};
 	})();
 }
+
+/// Converts a resolution to the smallest aspect ratio
+/// @param  {[object|int]} widthOrArray Array of both parameter [width, height] OR width in pixels
+/// @param  {[int]} height Height in pixels
+/// @return {[object]} Array of the aspectration [width, height]
+function resolutionToAspect(widthOrArray, height)
+{
+	if (typeof widthOrArray == "object")
+	{
+		height = widthOrArray[1];
+		widthOrArray = widthOrArray[0];
+	}
+
+	var count = 0;
+	var value = Math.max(widthOrArray, height) / Math.min(widthOrArray, height);
+
+	do
+	{
+		count++;		
+	} while ( (count/value) != parseInt(count/value) );
+	return [count, count/value];
+}
