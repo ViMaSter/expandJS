@@ -129,5 +129,5 @@ function resolutionToAspect(widthOrArray, height)
 	{
 		count++;		
 	} while ( (count/value) != parseInt(count/value) );
-	return [count, count/value];
+	return Math.max(widthOrArray, height) == widthOrArray ? [count, count/value] : [count/value, count];
 }
