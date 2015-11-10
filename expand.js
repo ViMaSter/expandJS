@@ -32,15 +32,23 @@ if (typeof String.prototype.format != 'function')
 {
 	String.prototype.format = function()
 	{
+		var replaceWithBlanks = false;
+
 		var args = arguments;
+		if (args[0] === true)
+		{
+			replaceWithBlanks = true;
+			Array.prototype.shift.call(arguments);
+		}
+
 		if (typeof args[0] == "object")
 			args = args[0];
 
 		return this.replace(/{([\d\w\_\-]+)}/g, function(match, number)
 		{
 			return typeof args[number] != 'undefined'
-				? args[number]
-				: match
+			? args[number]
+			: (replaceWithBlanks ? "" : match)
 			;
 		});
 	};
