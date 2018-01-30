@@ -1,0 +1,17 @@
+{
+  "name": "expandJS",
+  "description": "Helper library adding QoL-features",
+  "version": "1.0.0",
+  "main": "expand.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ViMaSter/expandJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "gpl-license",
+  "bugs": {
+    "url": "https://github.com/ViMaSter/expandJS/issues"
+  },
+  "homepage": "https://github.com/ViMaSter/expandJS"
+}
